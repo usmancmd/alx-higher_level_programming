@@ -8,6 +8,6 @@ def new_in_list(my_list, idx, element):
     if idx > i - 1:
         return cp
 
-    cp1 = my_list[:]
-    cp1[idx] = element
-    return cp1
+    cp = my_list[:]
+    cp[idx] = element
+    return cp
