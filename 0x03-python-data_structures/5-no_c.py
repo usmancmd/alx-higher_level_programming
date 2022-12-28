@@ -6,4 +6,4 @@ def no_c(my_string):
     for i in new:
         if i == "c" or i == "C":
             continue
-        return new
+            return new
