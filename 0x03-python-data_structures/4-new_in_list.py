@@ -13,5 +13,5 @@ def new_in_list(my_list, idx, element):
     new_list = my_list[:]
     for i in new_list:
         if new_list[idx] == i:
-            new_list = element
+            new_list[idx] = element
         return new_list
