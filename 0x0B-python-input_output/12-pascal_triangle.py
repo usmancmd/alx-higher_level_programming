@@ -4,15 +4,15 @@
 
 def pascal_triangle(n):
     """returns a list of integers inform of Pascal’s triangle"""
-    if n < 0:
+    if n <= 0:
         return []
 
     triangles = [[1]]
     while len(triangles) != n:
-        triangle = triangles[-1]
-        temp = [1]
-        for i in range(len(triangles) - 1):
-            temp.append(triangle[i] + triangle[i + 1])
-        temp.append(1)
-        triangles.append(temp)
+        tri = triangles[-1]
+        tmp = [1]
+        for i in range(len(tri) - 1):
+            tmp.append(tri[i] + tri[i + 1])
+        tmp.append(1)
+        triangles.append(tmp)
     return triangles
