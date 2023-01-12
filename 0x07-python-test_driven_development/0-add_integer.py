@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a sample function that adds 2 integers"""
 
+
 def add_integer(a, b=98):
     """Return the integer addition of a and b
     Args:
@@ -19,4 +20,3 @@ def add_integer(a, b=98):
     a = int(a)
     b = int(b)
     return a + b
-  
