@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Defines base Rectangle class"""
 from models.base import Base
 
@@ -77,7 +78,8 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.__x,
                                                        self.__y,
-                                                       self.__width, self.__height)
+                                                       self.__width,
+                                                       self.__height)
 
     def update(self, *args):
         if args and len(args) != 0:
@@ -117,6 +119,6 @@ class Rectangle(Base):
                     self.__y = v
 
     def to_dictionary(self):
-        return {"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}
-
-
+        return {"id": self.id,
+                "width": self.width,
+                "height": self.height, "x": self.x, "y": self.y}
