@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""lists all states from the database hbtn_0e_0_usa"""
+"""
+script that takes in an argument 
+and displays all values in the states table of hbtn_0e_0_usa 
+where name matches the argument.
+"""
 
 import sys
 import MySQLdb
@@ -10,7 +14,7 @@ if __name__ == "__main__":
 	connect = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
 
 	cur = connect.cursor()
-	query = "SELECT * FROM `states` WHERE '{}' LIKE BINARY '{}'".format(sys.argv[3], sys.argv[4])
+	query = "SELECT * FROM `states` WHERE BINARY `name` = '{}'".format(sys.argv[4])
 	cur.execute(query)
 
 	query_rows = cur.fetchall()
