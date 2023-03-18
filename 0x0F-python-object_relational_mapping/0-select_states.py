@@ -8,7 +8,7 @@ import sys
 import MySQLdb
 
 
-connect = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+connect = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
 
 cur = connect.cursor()
 cur.execute("SELECT * FROM `states`")
@@ -17,4 +17,5 @@ query_rows = cur.fetchall()
 for state in query_rows:
 	print(state)
 
+cur.close()
 connect.close()
