@@ -14,7 +14,7 @@ if __name__ == "__main__":
 	connect = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
 
 	cur = connect.cursor()
-	query = "SELECT * FROM `states` WHERE BINARY `name` = '{}'".format(sys.argv[4])
+	query = "SELECT * FROM `states` WHERE BINARY `name` = '{:s}'".format(sys.argv[4])
 	cur.execute(query)
 
 	query_rows = cur.fetchall()
