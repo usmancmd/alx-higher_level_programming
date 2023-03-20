@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     cur = connect.cursor()
     cur.execute("SELECT cities.id, cities.name, states.name \
-                FROM  \
+                FROM  cities \
                 INNER JOIN ON cities.state_id = states.id \
                 ORDER BY cities.id")
 
