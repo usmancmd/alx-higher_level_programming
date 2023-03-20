@@ -9,29 +9,31 @@ import MySQLdb
 
 
 if __name__ == "__main__":
-	""" not be executed when imported """
-	connect = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    """ not be executed when imported """
+    connect = MySQLdb.connect(host="localhost",
+                              port=3306,
+                              user=sys.argv[1],
+                              passwd=sys.argv[2],
+                              db=sys.argv[3])
 
-	cur = connect.cursor()
-#	cur.execute("SELECT  `cities`.`name`, FROM `cities` INNER JOIN `states` ON `cities`.`state_id`=`states`.`id` WHERE `states`.`name`= %s", sys.argv[4])
-	query = "SELECT cities.name \
-			FROM cities \
-			INNER JOIN states ON cities.state_id=states.id \
-			WHERE (states.name='{}')".format(sys.argv[4])
+    cur = connect.cursor()
+    query = "SELECT cities.name \
+            FROM cities \
+            INNER JOIN states ON cities.state_id=states.id \
+            WHERE (states.name='{}')".format(sys.argv[4])
 
-#	cur.execute(query, (sys.argv[4],))
-	cur.execute(query)
-	state = cur.fetchall()
-	length = len(state)
+    cur.execute(query)
+    state = cur.fetchall()
+    length = len(state)
 
-	for cities in state:
-		for city in cities:
-			length -= 1
-			print(city, end="")
-			if (length != 0):
-				print(", ", end="")
-			else:
-				print()
+    for cities in state:
+        for city in cities:
+            length -= 1
+            print(city, end="")
+            if (length != 0):
+                print(", ", end="")
+            else:
+                print()
 
-	cur.close()
-	connect.close()
+    cur.close()
+    connect.close()
