@@ -57,7 +57,6 @@ class Rectangle:
         return ("\n".join(["".join([str(self.print_symbol)
                 for i in range(self.__width)]) for j in range(self.__height)]))
 
-
     def __repr__(self):
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
