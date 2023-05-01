@@ -95,7 +95,7 @@ class Rectangle(Base):
                                                        self.__width,
                                                        self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Display func"""
         if args and len(args) != 0:
             a = 0
