@@ -31,3 +31,13 @@ class Base:
                 new = cls(1)
             new.update(**dictionary)
             return new
+
+    def save_to_file(cls, list_objs):
+        """writes the JSON string representation of list_objs to a file"""
+        with open(filename, "w") as jsfile:
+            if list_objs is None:
+                jsfile.write("[]")
+            else:
+                for obj in list_objs:
+                    list_dicts = obj.to_dictionary()
+                jsonfile.write(Base.to_json_string(list_dicts))
