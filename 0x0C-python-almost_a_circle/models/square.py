@@ -2,6 +2,7 @@
 """Defines class square that inherit from Rectangle"""
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """inherit from rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
@@ -10,13 +11,13 @@ class Square(Rectangle):
     @property
     def size(self):
         "getter"
-        return self.__width
+        return self.width
 
     @size.setter
     def size(self, value):
         "setter"
-        self.__width = value
-        self.__height = value
+        self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
         if args and len(args) != 0:
