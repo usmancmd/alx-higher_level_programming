@@ -14,7 +14,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Return width"""
+        """Set the width of Rectangle"""
         return self.__width
 
     @width.setter
@@ -28,7 +28,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Return height"""
+        """Set the height of Rectangle"""
         return self.__height
 
     @height.setter
@@ -87,14 +87,6 @@ class Rectangle(Base):
                 print("#", end="")
             print("")
 
-    def __str__(self):
-        """Print str"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                                                       self.x,
-                                                       self.y,
-                                                       self.width,
-                                                       self.height)
-
     def update(self, *args, **kwargs):
         """Display func"""
         if args and len(args) != 0:
@@ -138,3 +130,11 @@ class Rectangle(Base):
         return {"id": self.id,
                 "width": self.width,
                 "height": self.height, "x": self.x, "y": self.y}
+
+    def __str__(self):
+        """Print str"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x,
+                                                       self.y,
+                                                       self.width,
+                                                       self.height)
