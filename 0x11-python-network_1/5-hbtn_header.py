@@ -14,4 +14,3 @@ if __name__ == "__main__":
     for k, v in header.items():
         if k == 'X-Request-Id':
             print(v)
-
