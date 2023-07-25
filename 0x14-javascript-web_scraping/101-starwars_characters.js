@@ -2,7 +2,7 @@
 
 const request = require('request');
 const args = process.argv;
-const url = 'https://swapi-api.hbtn.io/api/films/' + args[2];
+const url = 'https://swapi-api.hbtn.io/api/films/' + `${args[2]}`;
 request(url, function (error, response, body) {
   if (!error) {
     const characters = JSON.parse(body).characters;
